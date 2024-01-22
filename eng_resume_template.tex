@@ -1,0 +1,238 @@
+% r/EngineeringResumes Resume Template
+
+\documentclass[11pt]{article} % set main font size
+\usepackage[empty]{fullpage} % use full page. remove header and footer
+\usepackage[letterpaper,margin=0.75in]{geometry} % set paper size and margins
+\usepackage{enumitem} % add list functionality
+\usepackage{marvosym} % add euro symbol €
+\usepackage{tabularx} % create columns
+\usepackage[hidelinks]{hyperref} % remove hyperlink color and borders
+
+% select font
+\usepackage[default]{lato}
+% \usepackage{tgpagella}
+% \usepackage{charter} 
+% \usepackage[sfdefault]{roboto}
+% \usepackage{libertine}
+
+\usepackage[utf8]{inputenc} % set input encoding to unicode UTF-8
+\usepackage[T1]{fontenc} % set character encoding to T1/Cork
+\raggedbottom % make page the height of text on the page
+\raggedright % remove text justification
+\setlength{\tabcolsep}{0pt} % remove column paddings
+\input{glyphtounicode} \pdfgentounicode = 1 % verify if generated PDF is machine-readable
+
+% format section headings
+\usepackage{titlesec}
+\titleformat
+{\section} % command
+{\vspace{0pt}\large} % format
+{} % label
+{0pt} % sep
+{} % before code
+[\vspace{0.75pt} \titlerule \vspace{1.75pt}] % after code
+
+% create subsection lists
+\newcommand{\BeginSubsectionList}{\begin{itemize}[leftmargin=0pt,label={}]}
+\newcommand{\EndSubsectionList}{\end{itemize}}
+
+% format bullet points
+\renewcommand\labelitemii{$\vcenter{\hbox{\small$\bullet$}}$}
+\newcommand{\Bullet}[1]{\item{#1 \vspace{-2pt}}}
+\newcommand{\BeginBulletList}{\begin{itemize}[leftmargin=12pt]}
+\newcommand{\EndBulletList}{\end{itemize}\vspace{0pt}}
+
+% format subsections
+\newcommand{\NewSkillCategory}[2]{
+    \vspace{-10pt}
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}} r}
+        \textbf{#1:} #2
+    \end{tabular*}
+    
+    \vspace{0pt}
+}
+
+\newcommand{\NewJob}[4]{
+    \vspace{-10pt}
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}} r}
+        {\textbf{#1,} {#2} $-$ #3} & {#4} \\
+    \end{tabular*}
+
+    \vspace{-10pt}
+}
+
+\newcommand{\NewProject}[3]{
+    \vspace{-10pt}
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}} r}
+      \textbf{#1} {#2} & {#3} \\
+    \end{tabular*}
+    
+    \vspace{-10pt}
+}
+
+\newcommand{\NewSchool}[3]{
+    \vspace{-10pt}
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}} r}
+        \textbf{#1} $-$ #2 & #3
+    \end{tabular*}
+    
+    \vspace{0pt}
+}
+
+% ---------------------------------------------------------------------
+% resume starts here
+
+\begin{document}
+
+\begin{center}
+    {\href{https://medium.com/@kiljoy001}{\huge Scott J. Guyton}} 
+    \\ \vspace{5pt} 
+    \href{mailto:sguyton01@gmail.com}{sguyton01@gmail.com}
+    \hspace{28pt}
+    \href{www.linkedin.com/in/scottjguyton}{https://www.linkedin.com/in/scottjguyton/}
+    \hspace{28pt}
+    \href{https://github.com/kiljoy001}{github.com/kiljoy001}
+\end{center}
+
+\vspace{-20pt}
+
+\section{Skills}
+    \BeginSubsectionList        
+        \NewSkillCategory
+            {Languages}
+            {Python, C\#, PowerShell, SQL, Bash}
+        \NewSkillCategory
+        	{System Administration}
+        	{Docker, Hyper-V, Azure, Linux, Windows Server, Solr, DNS, Networking, IT Security}
+        \NewSkillCategory
+        	{Blockchain}
+        	{Bitcoin, Namecoin, BigChainDB}
+
+  \EndSubsectionList
+
+\vspace{-19pt}
+
+\section{Experience}    
+    \BeginSubsectionList        
+        \NewJob
+            {Chief Technical Officer}
+            {{Global Systems Integration LLC}}
+            {Honolulu, HI}
+            {June 2023 $-$ Present}
+            
+            \BeginBulletList
+                \Bullet{ I lead the technical direction, development, and information security efforts of Global Systems
+Integration’s main product, a correctional institution student management system for the State
+of Hawaii.}
+            \EndBulletList
+
+        \vspace{8pt}
+        
+        \NewJob
+            {Project Engineer}
+            {Wipro / Microsoft}
+            {Redmond, WA}
+            {March 2021 $-$ Sept 2022}
+            
+            \BeginBulletList
+                \Bullet{Configured equipment/software to validate Azure Linux \& CBL-Mariner images using PowerShell, Python, and Linux.}
+                \Bullet{Successfully implemented and expanded a data center lab, ensuring optimal operations.}
+                \Bullet{Introduced Nagios for hardware monitoring, effectively reducing system downtime.}
+                \Bullet{Automated services and equipment monitoring via scripting, optimizing system efficiencies.}
+                \Bullet{Analyzed and resolved test run failures, enhancing lab operations through team collaborations.}
+            \EndBulletList
+
+        \vspace{8pt}
+        
+        \NewJob
+            {Software Engineer}
+            {HCL America / Microsoft}
+            {Redmond, WA}
+            {June 2018 $-$ Sept 2019}
+            
+            \BeginBulletList
+                \Bullet{Developed a C\#, Azure, and Solr application to showcase effective Solr indexing, achieving a searchable system for large datasets.}
+                \Bullet{Configured Solr \& Zookeeper on Windows and Linux, resulting in a backend processing terabytes of data.}
+                \Bullet{Automated deployment using an Azure Runbook in PowerShell, facilitating seamless VM-to-VM application transfers.}
+                \Bullet{Enhanced Azure expertise by hands-on work with its key components, bolstering project capabilities.}
+                \Bullet{Rectified seven accessibility issues in Microsoft’s PowerApps, ensuring compliance with standards.}
+            \EndBulletList
+
+\vspace{8pt}
+        
+        \NewJob
+            {Support Engineer}
+            {Allyis / Microsoft}
+            {Redmond, WA}
+            {Sept 2017 $-$ June 2018}
+            
+            \BeginBulletList
+                \Bullet{Utilized MySQL to swiftly diagnose and fix customer sign-up and service usage issues.}
+                \Bullet{Addressed and rectified data display discrepancies in customer interfaces.}
+
+            \EndBulletList
+            
+\vspace{8pt}
+        
+        \NewJob
+            {Intern - Software Engineer}
+            {Renton Technical College}
+            {Renton, WA}
+            {March 2016 $-$ August 2017}
+            
+            \BeginBulletList
+                \Bullet{Automated CSV file downloads and archiving using Python and Selenium WebDriver.}
+                \Bullet{Developed a custom Chromium browser, effectively overcoming file-saving limitations.}
+
+            \EndBulletList
+    \EndSubsectionList
+
+\vspace{-23pt}
+
+\section{Projects}
+    \BeginSubsectionList
+        \NewProject
+            {Toga}
+            {$-$ Python} 
+            {github.com/beeware/toga/} 
+            
+            \BeginBulletList
+                \Bullet{Contributed to the open source project Toga, A Python native, OS native GUI toolkit}
+            \EndBulletList
+          
+        \vspace{8pt}
+        
+        \NewProject
+            {Namecoin Based PKI System}
+            {$-$ Python, Blockchain}
+            {\href{https://github.com/kiljoy001/namecoin-register/}{github.com/kiljoy001/namecoin-register}} 
+            
+            \BeginBulletList
+                \Bullet{Exploratory project focusing on my blockchain based public key infrastructure research.}
+            \EndBulletList
+
+    \EndSubsectionList
+
+\vspace{-23pt}
+
+\section{Education}
+    \BeginSubsectionList        
+        \NewSchool
+            {University of Washington}
+            {Master of Cybersecurity \& Leadership}
+            {June 2024}
+
+        \vspace{2.75pt}
+        
+        \NewSchool
+            {Renton Technical College}
+            {Bachelor of Applied Science in Application Development}
+            {June 2019}
+
+  \EndSubsectionList
+
+\end{document}
